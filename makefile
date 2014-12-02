@@ -3,10 +3,6 @@ all: prog_main
 prog_main: prog_main.o List.o Node.o picture.o
 	g++ prog_main.o List.o Node.o picture.o -o prog_main
 
-prog_main.o: prog_main.cpp
-	g++ -c prog_main.cpp -o prog_main.o
-
-
 picture.o: List.h Node.h picture.h picture.cpp
 	g++ -c picture.cpp -o picture.o
 
