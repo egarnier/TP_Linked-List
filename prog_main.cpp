@@ -20,7 +20,6 @@
 // ===========================================================================
 #include "List.h"
 
-
 // ===========================================================================
 //                         Declare Miscellaneous Functions
 // ===========================================================================
@@ -37,8 +36,20 @@
 // ===========================================================================
 int main(int argc, char* argv[])
 {
-  printf("Hello World !\n");
+	// Creation of my first List #awesome !
+	picture baboon;
+	baboon.ppm_read_from_file("baboon.ppm");
+	List test;
+	test.NewList(baboon);
+	printf("Il y a %d éléments dans ma liste et un objet qui a pour adresse %c \n", test.GetNbElement(), test.GetHead());
+	picture* baboon_bw = new picture(baboon);
+	Node* a;
+	a=test.GetHead();
+	baboon_bw=a[0].GetPicture();
+	baboon_bw[0].ppm_desaturate();
+	baboon_bw[0].ppm_write_to_file("baboon_BW.ppm");
 
+  printf("Hello World !\n");
   return 0;
 }
 
