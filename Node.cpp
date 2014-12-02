@@ -67,9 +67,14 @@ picture* Node::GetPicture(void) const
 	return image;
 }
 
-void Node::SetNext(Node* unNext)
+void Node::SetNext(Node* const OneNext)
 {
-	next = unNext;
+	next = OneNext;
+}
+
+void Node::SetPicture(picture* const OnePicture)
+{
+	image = OnePicture;
 }
 
 // ===========================================================================
