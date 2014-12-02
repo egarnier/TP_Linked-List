@@ -54,7 +54,8 @@ class List
     // =======================================================================
     //                            Accessors: getters
     // =======================================================================
-
+    int GetNbElement(void) const;
+    Node* GetHead(void) const;
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
@@ -66,8 +67,9 @@ class List
     // =======================================================================
     //                              Public Methods
     // =======================================================================
-void NewList(const picture& FirstPicture);
-void append(picture NewPicture);
+    void NewList(const picture& FirstPicture);
+    void append(picture NewPicture);
+    void remove(picture DelPicture);
     // =======================================================================
     //                             Public Attributes
     // =======================================================================
@@ -100,8 +102,8 @@ void append(picture NewPicture);
     // =======================================================================
     //                             Protected Attributes
     // =======================================================================
-Node* head;  
-int nb_elements;
+    Node* head;  
+    int nb_elements;
 
 };
 
