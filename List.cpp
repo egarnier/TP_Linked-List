@@ -50,10 +50,18 @@ List::~List(void)
 // ===========================================================================
 //                                 Public Methods
 // ===========================================================================
+//Getters
 
-// ===========================================================================
-//                                Protected Methods
-// ===========================================================================
+int List::GetNbElement(void) const
+{
+	return nb_elements;
+}
+
+Node* List::GetHead(void) const
+{
+	return head;
+}
+
 void List::NewList(const picture& FirstPicture)
 {
 	nb_elements = 1;
@@ -80,8 +88,35 @@ void List::append(picture NewPicture)
 		Node* NewNode = new Node(NewPicture);
 		cur->SetNext(NewNode);
 		nb_elements += 1;
+		cur->~Node();
 	}
 }
+
+void List::remove(picture DelPicture)
+{
+	if(head == NULL)
+	{
+		printf("First you have to create a NewList before removing an element.\n");
+	}
+	else
+	{
+		Node* cur = new Node();
+		cur=head;
+
+		while(cur->GetNext() != NULL)
+		{
+			cur = cur->GetNext();
+		}
+		cur->SetPicture(NULL);
+		cur->SetNext(NULL);
+		nb_elements -= 1;
+		cur->~Node();
+	}
+}
+// ===========================================================================
+//                                Protected Methods
+// ===========================================================================
+
 // ===========================================================================
 //                               Non inline accessors
 // ===========================================================================
