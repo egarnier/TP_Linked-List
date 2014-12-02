@@ -17,7 +17,6 @@
 //                                 Project Files
 // ===========================================================================
 #include "Node.h"
-//#include "picture.h"
 
 
 
@@ -58,6 +57,20 @@ Node::~Node(void)
 // ===========================================================================
 //                                 Public Methods
 // ===========================================================================
+Node* Node::GetNext(void) const
+{
+	return next;
+}
+
+picture* Node::GetPicture(void) const
+{
+	return image;
+}
+
+void Node::SetNext(Node* unNext)
+{
+	next = unNext;
+}
 
 // ===========================================================================
 //                                Protected Methods
